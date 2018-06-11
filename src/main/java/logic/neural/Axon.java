@@ -44,7 +44,7 @@ public class Axon {
 
         }
 
-        neurons.add(new Neuron(curr_path, init_node));
+        neurons.add(new Neuron(curr_path, (Intersection)init_node, null, null, false, this));
 
     }
 

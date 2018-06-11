@@ -1,5 +1,6 @@
 package main.java;
 
+import main.java.common.LogUtils;
 import main.java.common.ThreadUtils;
 import main.java.logic.CloudDirector;
 import main.java.logic.RefUtils;
@@ -14,6 +15,8 @@ import main.java.ui.Window;
 public class LauncherTest {
 
     static {
+
+        LogUtils.init();
 
         ImageResource.init();
         FontResource.init();

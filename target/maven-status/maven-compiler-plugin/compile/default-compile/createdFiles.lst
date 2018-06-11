@@ -3,6 +3,7 @@ main/java/logic/neural/Axon.class
 main/java/logic/neural/Neuron.class
 main/java/SpeechTest$1.class
 main/java/logic/Light.class
+main/java/common/LogUtils.class
 main/java/path/math/LinearUtils$2.class
 main/java/logic/director/TaxiDirector.class
 main/java/ui/RenderUtils.class
@@ -30,6 +31,8 @@ main/java/ui/CommandPanel$1.class
 main/java/path/math/LinearUtils$Orientation.class
 main/java/path/math/LinearUtils$1.class
 main/java/path/math/CircleUtils$TurningNodes.class
+main/java/common/LogUtils$UpdateMessageEvent.class
+main/java/common/LogUtils$1.class
 main/java/MusicTest.class
 main/java/resources/FontResource.class
 main/java/logic/neural/Axon$1.class
