@@ -11,12 +11,16 @@ public class ThreadUtils {
 
     protected static ExecutorService message_update_worker;
 
+    public static void priorityInit() {
+
+        message_update_worker = Executors.newSingleThreadExecutor();
+
+    }
+
     public static void init() {
         mouse_worker = Executors.newCachedThreadPool();
         frost_worker = Executors.newCachedThreadPool();
         position_worker = Executors.newCachedThreadPool();
-
-        message_update_worker = Executors.newSingleThreadExecutor();
     }
 
 }

@@ -16,6 +16,8 @@ public class LauncherTest {
 
     static {
 
+        ThreadUtils.init();
+
         LogUtils.init();
 
         ImageResource.init();
@@ -27,7 +29,6 @@ public class LauncherTest {
             Paths.saveTelemetryData();
         }
 
-        ThreadUtils.init();
         MusicUtils.init();
         RefUtils.init();
 

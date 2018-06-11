@@ -57,8 +57,30 @@
       <file leaf-file-name="LogUtils.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/common/LogUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-99">
-              <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+            <state relative-caret-position="50">
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoreDefinitions.constants" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/constants/CoreDefinitions.constants">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="24" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/constants/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -67,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/LauncherTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="91">
-              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+              <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,8 +100,8 @@
       <file leaf-file-name="ThreadUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/common/ThreadUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
+            <state relative-caret-position="210">
+              <caret line="15" column="68" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -120,15 +142,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParseUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/constants/ParseUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -165,6 +178,7 @@
       <find>calc</find>
       <find>zoom_factor</find>
       <find>zoom_factorF</find>
+      <find>getInt</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -211,11 +225,13 @@
         <option value="$PROJECT_DIR$/src/main/java/music/MusicUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/path/Intersection.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/neural/Neuron.java" />
-        <option value="$PROJECT_DIR$/src/main/java/common/ThreadUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/path/Paths.java" />
-        <option value="$PROJECT_DIR$/src/main/java/LauncherTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/common/LogUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/neural/Axon.java" />
+        <option value="$PROJECT_DIR$/src/main/java/LauncherTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/ThreadUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/constants/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/constants/CoreDefinitions.constants" />
+        <option value="$PROJECT_DIR$/src/main/java/common/LogUtils.java" />
       </list>
     </option>
   </component>
@@ -573,31 +589,33 @@
       <workItem from="1528476218762" duration="2326000" />
       <workItem from="1528479004335" duration="1193000" />
       <workItem from="1528491593477" duration="3000" />
-      <workItem from="1528740380869" duration="1977000" />
+      <workItem from="1528740380869" duration="4034000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129200000" />
+    <option name="totallyTimeSpent" value="131257000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.48426324" weight="0.32969698" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.46638054" side_tool="true" visible="true" weight="0.35272726" />
-      <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.13876967" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.46709585" side_tool="true" visible="true" weight="0.35272726" />
+      <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.20958512" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.53361946" visible="true" weight="0.35272726" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.53290415" visible="true" weight="0.35272726" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2725322" />
       <window_info anchor="right" id="Database" order="6" weight="0.3297568" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24964234" />
       <window_info id="UI Designer" order="4" />
@@ -606,11 +624,9 @@
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" weight="0.21939394" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.48497853" weight="0.32969698" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,13 +653,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/path/math/CircleUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1245">
-          <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/path/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -838,13 +847,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/constants/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/logic/director/TurnDirector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="945">
@@ -931,13 +933,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/common/ThreadUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/path/Intersection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -964,16 +959,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/LauncherTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/logic/neural/Neuron.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -993,10 +978,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/ThreadUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="68" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/LauncherTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/constants/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/constants/CoreDefinitions.constants">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/common/LogUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-99">
-          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        <state relative-caret-position="50">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

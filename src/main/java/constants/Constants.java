@@ -31,4 +31,10 @@ public class Constants {
         }
     }
 
+    public static boolean getBoolean(String resource_name, Definitions type) {
+
+        return getInt(resource_name, type) == 1;
+
+    }
+
 }

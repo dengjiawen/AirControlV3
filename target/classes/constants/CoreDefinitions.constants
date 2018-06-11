@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <CoreConstants>
+
+    <LogUtils>
+        <showDebugMessages>1</showDebugMessages>
+        <showGeneralMessages>1</showGeneralMessages>
+        <showErrorMessages>1</showErrorMessages>
+        <showRepaintMessages>0</showRepaintMessages>
+
+        <updateIntervals>1000</updateIntervals>
+    </LogUtils>
+
     <RefreshRate>35</RefreshRate>
 
     <TextureCount>
