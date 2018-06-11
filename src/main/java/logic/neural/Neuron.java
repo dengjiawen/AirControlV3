@@ -8,7 +8,7 @@ public class Neuron {
 
     Paths init_path;
     Intersection init_intersection;
-    // 3=======D
+
     Paths dest_path;
     Intersection dest_intersection;
 

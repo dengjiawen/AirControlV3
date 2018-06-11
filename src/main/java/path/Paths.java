@@ -199,7 +199,7 @@ public enum Paths implements Serializable {
     }
 
     public static boolean readTelemetryData() {
-            // Do you love us? T^T
+
         String directory = new JFileChooser().getFileSystemView().getDefaultDirectory().toString();
         directory += "/AirControlV3/telemetry/";
 

@@ -303,18 +303,20 @@ public class Intersection extends Node implements Serializable { // Unicorns and
 
     public Paths getRandomPath(Paths exclude) {
 
-        Paths[] randomize_path = new Paths[paths.length - 1];
-        for (int i = 0, j = 0; i < paths.length; i ++) {
-            if (paths[i] != exclude && paths[]) {
-                randomize_path[j++] = paths[i]; // Shawn only lasts 5 minutes
-            }
-        }
+//        Paths[] randomize_path = new Paths[paths.length - 1];
+//        for (int i = 0, j = 0; i < paths.length; i ++) {
+//            if (paths[i] != exclude && paths[]) {
+//                randomize_path[j++] = paths[i]; // Shawn only lasts 5 minutes
+//            }
+//        }
+
+        return null;
 
     }
 
     public boolean getRandomReverseBooleanForPath(Paths random_path) {
 
-
+        return false;
 
     }
 
