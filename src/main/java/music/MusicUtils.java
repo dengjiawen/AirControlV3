@@ -10,8 +10,8 @@ public class MusicUtils { // Let it goo
 
         TinySound.init();
         Music music = TinySound.loadMusic(bip, true);
-        music.setVolume(0.75f);
-        //music.play(true);
+        music.setVolume(0.5f);
+        music.play(true);
     }
 
 }

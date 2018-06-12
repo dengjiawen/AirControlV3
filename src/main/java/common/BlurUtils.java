@@ -1,82 +1,153 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ * <p>
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ * <p>
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ * <p>
+ * -----------------------------------------------------------------------------
+ * BlurUtils.java
+ * -----------------------------------------------------------------------------
+ * This is a specialized java class designed to process imagery information,
+ * applying a rough gaussian blur effect to the images using multiple
+ * threads. (Be aware of thread conflicts)
+ * <p>
+ * This class is a part of the CoreGraphics, and is essential for the
+ * normal functions of this software.
+ * <p>
+ * This class should not be changed under any circumstances.
+ * -----------------------------------------------------------------------------
+ */
 
 package main.java.common;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
+
 import java.util.ArrayList;
 
 public class BlurUtils {
 
-    public static final int[][] filter9 = {{1, 1, 1},
-            {1, 1, 1},
-            {1, 1, 1}
-    };
-    public static final int[][] filter16 = {{1, 2, 1},
+// --Commented out by Inspection START (2018-06-12, 1:08 PM):
+//    /**
+//     * Blur Filter, Level 9
+//     */
+//    private static final int[][] filter9 = {{1, 1, 1},
+//            {1, 1, 1},
+//            {1, 1, 1}
+//    };
+// --Commented out by Inspection STOP (2018-06-12, 1:08 PM)
+
+    /**
+     * Blur Filter, Level 16
+     */
+    private static final int[][] filter16 = {{1, 2, 1},
             {2, 4, 2},
             {1, 2, 1}
     };
 
-    public BufferedImage getFilteredImage(BufferedImage givenImage, int[][] filter, int iterationNum) {
+    private int filter_sum = 0;
 
+    /**
+     * Method that takes an image and applies the blur
+     * effect to it.
+     *
+     * @param image         target image
+     * @param iteration_num number of iterations (blur intensity)
+     * @return bufferedimage, blurred
+     */
+    public BufferedImage getFilteredImage(BufferedImage image, int iteration_num) {
+
+        /* use 16 filter for a more intense blur effect
+           without using too much resources. */
+
+        LogUtils.printRepaintMessage("Blurring operation on image " + image.toString() + " started.");
+
+        /* use arraylist for its parallel stream multithread processing */
         ArrayList<Integer> y = new ArrayList<Integer>() {{
-            for (int y = 1; y + 1 < givenImage.getHeight(); y++) {
+            for (int y = 1; y + 1 < image.getHeight(); y++) {
                 add(y);
             }
         }};
 
         ArrayList<Integer> x = new ArrayList<Integer>() {{
-            for (int x = 1; x + 1 < givenImage.getWidth(); x++) {
+            for (int x = 1; x + 1 < image.getWidth(); x++) {
                 add(x);
             }
         }};
 
+        /* use parallel stream to process every pixel in the image
+           simultaneously using getFilteredValue() */
         int count = 0;
-        while (count < iterationNum) {
+        while (count < iteration_num) {
 
-            y.parallelStream().forEach(y1 -> {
-                x.parallelStream().forEach(x1 -> {
-                    Color tempColor = getFilteredValue(givenImage, y1, x1, filter);
-                    givenImage.setRGB(x1, y1, tempColor.getRGB());
-                });
-            });
+            y.parallelStream().forEach(y1 ->
+                    x.parallelStream().forEach(x1 -> {
+                        Color tempColor = getFilteredValue(image, y1, x1);
+                        image.setRGB(x1, y1, tempColor.getRGB());
+                    }));
 
-//            for (int y = 1; y + 1 < givenImage.getHeight(); y++) {
-//                for (int x = 1; x + 1 < givenImage.getWidth(); x++) {
-//                    Color tempColor = getFilteredValue(givenImage, y, x, filter);
-//                    givenImage.setRGB(x, y, tempColor.getRGB());
-//                }
-//            }
-
-
+            /* iterate more times for more blurred effects */
             count++;
 
         }
-        return givenImage;
+
+        LogUtils.printRepaintMessage("Blurring operation on image " + image.toString() + " completed.");
+
+        return image;
     }
 
-    private Color getFilteredValue(final BufferedImage givenImage, int y, int x, int[][] filter) {
+    /**
+     * Method that computes the RGB value for individual
+     * pixels in order to apply the blur effects.
+     *
+     * @param image  the target image
+     * @param y      pixel coord, y
+     * @param x      pixel coord, x
+     * @return color, the recalculated RBG value of the pixel
+     */
+    private Color getFilteredValue(final BufferedImage image, int y, int x) {
         int r = 0, g = 0, b = 0;
         for (int j = -1; j <= 1; j++) {
             for (int k = -1; k <= 1; k++) {
-                r += (filter[1 + j][1 + k] * (new Color(givenImage.getRGB(x + k, y + j))).getRed());
-                g += (filter[1 + j][1 + k] * (new Color(givenImage.getRGB(x + k, y + j))).getGreen());
-                b += (filter[1 + j][1 + k] * (new Color(givenImage.getRGB(x + k, y + j))).getBlue());
+
+                /* recalculate the RGB value for the given pixel on the image */
+                r += (filter16[1 + j][1 + k] * (new Color(image.getRGB(x + k, y + j))).getRed());
+                g += (filter16[1 + j][1 + k] * (new Color(image.getRGB(x + k, y + j))).getGreen());
+                b += (filter16[1 + j][1 + k] * (new Color(image.getRGB(x + k, y + j))).getBlue());
             }
 
         }
-        r = r / sum(filter);
-        g = g / sum(filter);
-        b = b / sum(filter);
+
+        r = r / sum();
+        g = g / sum();
+        b = b / sum();
+
         return new Color(r, g, b);
     }
 
-    private int sum(int[][] filter) {
+    /**
+     * Method that retrieves the sum of the given filter.
+     *
+     * @return sum of filter values
+     */
+    private int sum() {
+
+        if (filter_sum != 0) return filter_sum;
+
+        /* add up all of the numbers in the filter array */
         int sum = 0;
-        for (int y = 0; y < filter.length; y++) {
-            for (int x = 0; x < filter[y].length; x++) {
-                sum += filter[y][x];
+        for (int[] filter_segment : filter16) {
+            for (int filter_subsegment : filter_segment) {
+                sum += filter_subsegment;
             }
         }
+
+        /* set filter_sum to sum to avoid repeated calculations */
+        filter_sum = sum;
         return sum;
     }
 }

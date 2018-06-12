@@ -1,19 +1,19 @@
 /**
  * Copyright 2018 (C) Jiawen Deng. All rights reserved.
- *
+ * <p>
  * This document is the property of Jiawen Deng.
  * It is considered confidential and proprietary.
- *
+ * <p>
  * This document may not be reproduced or transmitted in any form,
  * in whole or in part, without the express written permission of
  * Jiawen Deng.
- *
+ * <p>
  * -----------------------------------------------------------------------------
  * LogUtils.java
  * -----------------------------------------------------------------------------
  * This is a specialized java class designed to output debug information onto
  * the console, as well as writing log to file via FileIO.
- *
+ * <p>
  * This class is a part of the CoreFramework, and is essential for the
  * normal functions of this software.
  * -----------------------------------------------------------------------------
@@ -157,6 +157,16 @@ public class LogUtils {
         });
     }
 
+    /**
+     * Prints a message for repaint related events.
+     */
+    public static void printRepaintMessage(String message) {
+        ThreadUtils.message_update_worker.submit(() -> {
+            if (show_repaint_messages)
+                submitMessageToQueue(getDate() + " -> |" + getCallerClass() + "|" + " CoreGraphics: " + message);
+        });
+    }
+
 
     /**
      * Prints a generic message to console and log, including time.
@@ -165,10 +175,8 @@ public class LogUtils {
      */
     @Deprecated
     public static void print(String message) {
-        ThreadUtils.message_update_worker.submit(() -> {
-            submitMessageToQueue(getDate() + " -> " + message +
-                    "\nLogUtils.print() had been deprecated. Use Console.printGeneralMessage() instead.");
-        });
+        ThreadUtils.message_update_worker.submit(() -> submitMessageToQueue(getDate() + " -> " + message +
+                "\nLogUtils.print() had been deprecated. Use Console.printGeneralMessage() instead."));
     }
 
     /**
@@ -176,7 +184,7 @@ public class LogUtils {
      * printMessage() method is called.
      * Reduces dependency on the deprecated sun.internal.Reflect
      * package.
-     * @return  name of caller class
+     * @return name of caller class
      */
     private static String getCallerClass() {
 
@@ -244,31 +252,55 @@ public class LogUtils {
         private void updateMessages()
                 throws Exception {
 
-            Path dir_path = java.nio.file.Paths.get(log_directory);
-            Files.createDirectories(dir_path);
+            try {
+                /* create path object and check directory integrity */
+                Path dir_path = java.nio.file.Paths.get(log_directory);
+                Files.createDirectories(dir_path);
+            } catch (Exception e) {
+                printErrorMessage(e.getMessage());
+                printErrorMessage("Cannot write to target logging directory. This log session will not be saved.");
+            }
 
-            PrintWriter writer =
-                    new PrintWriter(new FileOutputStream(log_directory + "log_" + getDate() + ".AirControlLog", true));
+            /* initialize PrintWriter for FileIO */
+            PrintWriter writer = null;
 
+            try {
+                writer = new PrintWriter(new FileOutputStream(log_directory + "log_" + getDate() + ".AirControlLog", true));
+            } catch (Exception e) {
+                printErrorMessage(e.getMessage());
+                printErrorMessage("Cannot write to target logging directory. This log session will not be saved.");
+            }
+
+            /* String buffer to hold queued messages */
             String buffered_message;
             buffered_message = message_buffer.poll();
 
+            /* write message to console, via err stream if message is error message */
             while (buffered_message != null) {
                 if (buffered_message.toLowerCase().contains("error")) {
                     System.err.println(buffered_message);
                 } else {
                     System.out.println(buffered_message);
                 }
+
+                /* write message to log file */
+                if (writer != null)
                 writer.println(buffered_message);
 
+                /* poll next message from queue */
                 buffered_message = message_buffer.poll();
             }
 
+            /* flush and close writer */
             writer.flush();
             writer.close();
 
         }
 
+        /**
+         * Method that returns the date format for log files.
+         * @return  string, current time
+         */
         private static String getDate() {
             DateFormat date_format = new SimpleDateFormat("yyyy-MM-dd_HH");
             Date date_object = new Date();

@@ -1,15 +1,36 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ * <p>
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ * <p>
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ * <p>
+ * -----------------------------------------------------------------------------
+ * Constants.java
+ * -----------------------------------------------------------------------------
+ * This is a specialized java class designed to handle requests from classes
+ * for constant values from XML files.
+ * <p>
+ * This class is a part of the CoreFramework, and is essential for the
+ * normal functions of this software.
+ * <p>
+ * This class should not be changed under any circumstances.
+ * -----------------------------------------------------------------------------
+ */
+
 package main.java.constants;
 
-import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Constants {
-
-    public final static byte DEFAULT = 0x00;
 
     private final static String UI_DEFINITION_PATH = "/constants/UIDefinitions.constants";
     private final static String CORE_DEFINITION_PATH = "/constants/CoreDefinitions.constants";
 
-    private static HashMap<String, Integer> integer_parameters = new HashMap<>();
+    private static ConcurrentHashMap<String, Integer> integer_parameters = new ConcurrentHashMap<>();
 
     public static int getInt(String resource_name, Definitions type) {
         try {
