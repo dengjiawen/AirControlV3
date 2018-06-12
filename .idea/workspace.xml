@@ -52,11 +52,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParseUtils.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ParseUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/constants/ParseUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+            <state relative-caret-position="271">
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,6 +71,18 @@
               <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThreadUtils.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/common/ThreadUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="56" column="55" lean-forward="true" selection-start-line="56" selection-start-column="55" selection-end-line="56" selection-end-column="55" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -158,7 +173,6 @@
         <option value="$PROJECT_DIR$/src/main/java/path/Paths.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/neural/Axon.java" />
         <option value="$PROJECT_DIR$/src/main/java/music/MusicUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/common/ThreadUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/constants/Definitions.java" />
         <option value="$PROJECT_DIR$/src/main/java/LauncherTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ui/FrostedPane.java" />
@@ -167,6 +181,7 @@
         <option value="$PROJECT_DIR$/src/main/java/constants/Constants.java" />
         <option value="$PROJECT_DIR$/src/main/resources/constants/CoreDefinitions.constants" />
         <option value="$PROJECT_DIR$/src/main/java/constants/ParseUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/common/ThreadUtils.java" />
       </list>
     </option>
   </component>
@@ -527,16 +542,15 @@
       <workItem from="1528491593477" duration="3000" />
       <workItem from="1528740380869" duration="4255000" />
       <workItem from="1528752342364" duration="699000" />
-      <workItem from="1528821807112" duration="3693000" />
+      <workItem from="1528821807112" duration="3865000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135870000" />
+    <option name="totallyTimeSpent" value="136042000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -548,11 +562,11 @@
       <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.1509299" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.76537913" visible="true" weight="0.35272726" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.76537913" weight="0.35272726" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27968526" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27968526" />
       <window_info anchor="bottom" id="Inspection Results" sideWeight="0.5135909" weight="0.32969698" />
       <window_info anchor="right" id="Database" order="6" weight="0.3297568" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -863,48 +877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/common/ThreadUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="21" selection-end-column="3" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/constants/CoreDefinitions.constants">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/common/LogUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="279" column="117" selection-start-line="279" selection-start-column="117" selection-end-line="279" selection-end-column="117" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="method#init#0;class#LogUtils#0" />
-            <element signature="method#submitMessageToQueue#0;class#LogUtils#0" />
-            <element signature="method#printGeneralMessage#0;class#LogUtils#0" />
-            <element signature="method#printDebugMessage#0;class#LogUtils#0" />
-            <element signature="method#printErrorMessage#0;class#LogUtils#0" />
-            <element signature="method#printRepaintMessage#0;class#LogUtils#0" />
-            <element signature="method#print#0;class#LogUtils#0" />
-            <element signature="method#getCallerClass#0;class#LogUtils#0" />
-            <element signature="method#getDate#0;class#LogUtils#0" />
-            <element signature="method#actionPerformed#0;class#UpdateMessageEvent#0;class#LogUtils#0" />
-            <element signature="method#getDate#0;class#UpdateMessageEvent#0;class#LogUtils#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/constants/UIDefinitions.constants">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/constants/Definitions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
@@ -956,8 +928,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/constants/ParseUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        <state relative-caret-position="271">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/LogUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2296">
+          <caret line="279" column="117" selection-start-line="279" selection-start-column="117" selection-end-line="279" selection-end-column="117" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#submitMessageToQueue#0;class#LogUtils#0" />
+            <element signature="method#printGeneralMessage#0;class#LogUtils#0" />
+            <element signature="method#printDebugMessage#0;class#LogUtils#0" />
+            <element signature="method#printErrorMessage#0;class#LogUtils#0" />
+            <element signature="method#printRepaintMessage#0;class#LogUtils#0" />
+            <element signature="method#print#0;class#LogUtils#0" />
+            <element signature="method#getCallerClass#0;class#LogUtils#0" />
+            <element signature="method#getDate#0;class#LogUtils#0" />
+            <element signature="method#actionPerformed#0;class#UpdateMessageEvent#0;class#LogUtils#0" />
+            <element signature="method#getDate#0;class#UpdateMessageEvent#0;class#LogUtils#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/constants/UIDefinitions.constants">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/constants/CoreDefinitions.constants">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/common/ThreadUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="56" column="55" lean-forward="true" selection-start-line="56" selection-start-column="55" selection-end-line="56" selection-end-column="55" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

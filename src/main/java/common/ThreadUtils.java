@@ -51,10 +51,19 @@ public class ThreadUtils {
      */
     public static void init() {
 
+        LogUtils.printCoreMessage("Initializing worker threads...");
+
         /* allocate shared cached thread pools */
         mouse_worker = Executors.newCachedThreadPool();
+        LogUtils.printCoreMessage("Mouse worker initiated!");
+
         frost_worker = Executors.newCachedThreadPool();
+        LogUtils.printCoreMessage("Frost worker initiated!");
+
         position_worker = Executors.newCachedThreadPool();
+        LogUtils.printCoreMessage("Position worker initiated!");
+
+        LogUtils.printCoreMessage("All worker threads had been successfully initiated.");
 
     }
 
