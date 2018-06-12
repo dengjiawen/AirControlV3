@@ -25,13 +25,16 @@
 
 package main.java.constants;
 
-import org.w3c.dom.Document; // Smile~
+import main.java.common.LogUtils;
+
+import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+
 import java.io.IOException;
-import java.util.Objects; // No, put that frownie face away, man
+import java.util.Objects;
 
 public class ParseUtils {
 
@@ -51,16 +54,16 @@ public class ParseUtils {
 
             return XMLTree.getElementsByTagName(resource_name).item(0).getTextContent();
         } catch (SAXException e) {
-            e.printStackTrace();
+            LogUtils.printErrorMessage(e.getMessage());
         } catch (IOException e) {
-            e.printStackTrace();
+            LogUtils.printErrorMessage(e.getMessage());
         } catch (ParserConfigurationException e) {
-            e.printStackTrace();
+            LogUtils.printErrorMessage(e.getMessage());
         }
 
         return null;
 
-    } // Andy is a pickleman
+    }
 
     /**
      * Parse integer from XML entries, using parseString

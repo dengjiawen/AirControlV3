@@ -25,5 +25,30 @@
 package main.java.constants;
 
 public enum Definitions {
-    CORE_CONSTANTS, UI_CONSTANTS,
+
+    /* enumerated types containing their respective constant file paths */
+    CORE_CONSTANTS("/constants/UIDefinitions.constants"),
+    UI_CONSTANTS("/constants/CoreDefinitions.constants"),
+
+    /* zero day patch */
+    ZERO_DAY_PATCH("/constants/zero_day_fix/AddedDefinitions_1.constants");
+
+    private String path;    // path to definition file
+
+    Definitions(String path) {
+
+        this.path = path;
+
+    }
+
+    /**
+     * Method that returns the file path.
+     * @return  string, file path
+     */
+    String getPath() {
+
+        return path;
+
+    }
+
 }

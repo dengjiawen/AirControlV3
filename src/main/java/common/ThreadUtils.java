@@ -63,7 +63,7 @@ public class ThreadUtils {
         position_worker = Executors.newCachedThreadPool();
         LogUtils.printCoreMessage("Position worker initiated!");
 
-        LogUtils.printCoreMessage("All worker threads had been successfully initiated.");
+        LogUtils.printCoreMessage("All worker threads had been successfully initiated!");
 
     }
 

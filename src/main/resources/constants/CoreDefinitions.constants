@@ -16,7 +16,7 @@
     </LogUtils>
 
     <BlurUtils>
-        <iterationNumber>2</iterationNumber>
+        <iterationNumber>1</iterationNumber>
         <filterType>16</filterType>
     </BlurUtils>
 

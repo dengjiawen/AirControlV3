@@ -33,13 +33,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Constants {
 
     /**
-     * Constant strings that define the path of definition files.
-     * These lines should not be altered under any circumstances.
-     */
-    private final static String UI_DEFINITION_PATH = "/constants/UIDefinitions.constants";
-    private final static String CORE_DEFINITION_PATH = "/constants/CoreDefinitions.constants";
-
-    /**
      * A concurrent hashmap that keeps tabs on loaded constants
      * in order to avoid repeated parsing.
      */
@@ -62,26 +55,18 @@ public class Constants {
             return integer_parameters.get(resource_name);
         } catch (NullPointerException e) {
 
+            LogUtils.printErrorMessage(e.getMessage() + ", will try to handle.");
+
             LogUtils.printCoreMessage("Constant " + resource_name + " not found in " +
                     "existing constants, will try to load from configuration files.");
 
-            /* if variable do not exist, search the XML file */
-            switch (type) {
-                case CORE_CONSTANTS:
-                    integer_parameters.put(resource_name,
-                            ParseUtils.parseInt(CORE_DEFINITION_PATH, resource_name));
-                    break;
-                case UI_CONSTANTS:
-                    integer_parameters.put(resource_name,
-                            ParseUtils.parseInt(UI_DEFINITION_PATH, resource_name));
-                    break;
-                default:
-                    /* if resource not found, return 0 */
-                    integer_parameters.put(resource_name, 0);
-            }
+            integer_parameters.put(resource_name,
+                    ParseUtils.parseInt(type.getPath(), resource_name));
 
             LogUtils.printCoreMessage("Constant " + resource_name + " found in the " +
                     "configuration files!");
+
+            LogUtils.printCoreMessage("Error handled successfully.");
 
             return getInt(resource_name, type);
         }
