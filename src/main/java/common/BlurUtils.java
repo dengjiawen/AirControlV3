@@ -24,6 +24,9 @@
 
 package main.java.common;
 
+import main.java.constants.Constants;
+import main.java.constants.Definitions;
+
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 
@@ -31,15 +34,13 @@ import java.util.ArrayList;
 
 public class BlurUtils {
 
-// --Commented out by Inspection START (2018-06-12, 1:08 PM):
-//    /**
-//     * Blur Filter, Level 9
-//     */
-//    private static final int[][] filter9 = {{1, 1, 1},
-//            {1, 1, 1},
-//            {1, 1, 1}
-//    };
-// --Commented out by Inspection STOP (2018-06-12, 1:08 PM)
+    /**
+     * Blur Filter, Level 9
+     */
+    private static final int[][] filter9 = {{1, 1, 1},
+            {1, 1, 1},
+            {1, 1, 1}
+    };
 
     /**
      * Blur Filter, Level 16
@@ -49,20 +50,45 @@ public class BlurUtils {
             {1, 2, 1}
     };
 
-    private int filter_sum = 0;
+    private static int filter_sum;     // the sum of the filter values
+    private static int iteration_num;  // the number of iterations on image operations (blur intensity)
+
+    private static int[][] filter;     // the chosen filter (as defined in CoreDefinitions.constants)
+
+    /**
+     * Method that initializes variables within BlurUtils.
+     */
+    public static void init() {
+
+        LogUtils.printGeneralMessage("Initializing BlurUtils...");
+
+        iteration_num = Constants.getInt("iterationNumber", Definitions.CORE_CONSTANTS);
+        int filter_type = Constants.getInt("filterType", Definitions.CORE_CONSTANTS);
+        switch (filter_type) {
+            case 16:
+                filter = filter16;
+                break;
+            case 9:
+                filter = filter9;
+                break;
+            default:
+                filter = filter16;
+        }
+
+        filter_sum = sum();
+
+        LogUtils.printGeneralMessage("BlurUtils successfully initiated!");
+
+    }
 
     /**
      * Method that takes an image and applies the blur
      * effect to it.
      *
      * @param image         target image
-     * @param iteration_num number of iterations (blur intensity)
      * @return bufferedimage, blurred
      */
-    public BufferedImage getFilteredImage(BufferedImage image, int iteration_num) {
-
-        /* use 16 filter for a more intense blur effect
-           without using too much resources. */
+    public BufferedImage getFilteredImage(BufferedImage image) {
 
         LogUtils.printRepaintMessage("Blurring operation on image " + image.toString() + " started.");
 
@@ -115,16 +141,16 @@ public class BlurUtils {
             for (int k = -1; k <= 1; k++) {
 
                 /* recalculate the RGB value for the given pixel on the image */
-                r += (filter16[1 + j][1 + k] * (new Color(image.getRGB(x + k, y + j))).getRed());
-                g += (filter16[1 + j][1 + k] * (new Color(image.getRGB(x + k, y + j))).getGreen());
-                b += (filter16[1 + j][1 + k] * (new Color(image.getRGB(x + k, y + j))).getBlue());
+                r += (filter[1 + j][1 + k] * (new Color(image.getRGB(x + k, y + j))).getRed());
+                g += (filter[1 + j][1 + k] * (new Color(image.getRGB(x + k, y + j))).getGreen());
+                b += (filter[1 + j][1 + k] * (new Color(image.getRGB(x + k, y + j))).getBlue());
             }
 
         }
 
-        r = r / sum();
-        g = g / sum();
-        b = b / sum();
+        r = r / filter_sum;
+        g = g / filter_sum;
+        b = b / filter_sum;
 
         return new Color(r, g, b);
     }
@@ -134,20 +160,16 @@ public class BlurUtils {
      *
      * @return sum of filter values
      */
-    private int sum() {
-
-        if (filter_sum != 0) return filter_sum;
+    private static int sum() {
 
         /* add up all of the numbers in the filter array */
         int sum = 0;
-        for (int[] filter_segment : filter16) {
+        for (int[] filter_segment : filter) {
             for (int filter_subsegment : filter_segment) {
                 sum += filter_subsegment;
             }
         }
 
-        /* set filter_sum to sum to avoid repeated calculations */
-        filter_sum = sum;
         return sum;
     }
 }

@@ -1,5 +1,6 @@
 package main.java;
 
+import main.java.common.BlurUtils;
 import main.java.common.LogUtils;
 import main.java.common.ThreadUtils;
 import main.java.logic.CloudDirector;
@@ -16,10 +17,11 @@ public class LauncherTest {
 
     static {
 
-        ThreadUtils.init();
-
         LogUtils.init();
 
+        BlurUtils.init();
+
+        ThreadUtils.init();
         ImageResource.init();
         FontResource.init();
 

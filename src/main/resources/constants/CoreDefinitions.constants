@@ -2,6 +2,10 @@
 
 <CoreConstants>
 
+    <CoreGraphics>
+        <RefreshRate>35</RefreshRate>
+    </CoreGraphics>
+
     <LogUtils>
         <showDebugMessages>1</showDebugMessages>
         <showGeneralMessages>1</showGeneralMessages>
@@ -11,16 +15,12 @@
         <updateIntervals>1000</updateIntervals>
     </LogUtils>
 
-    <RefreshRate>35</RefreshRate>
-
-    <TextureCount>
-        <MaterialT>10</MaterialT>
-        <PMaintenanceT>1</PMaintenanceT>
-    </TextureCount>
-
-    <RowCount>42</RowCount>
-    <ColCount>75</ColCount>
+    <BlurUtils>
+        <iterationNumber>2</iterationNumber>
+        <filterType>16</filterType>
+    </BlurUtils>
 
     <MaxZoom>3</MaxZoom>
     <MinZoom>1</MinZoom>
+
 </CoreConstants>

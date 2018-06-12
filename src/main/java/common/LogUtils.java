@@ -277,7 +277,7 @@ public class LogUtils {
 
             /* write message to console, via err stream if message is error message */
             while (buffered_message != null) {
-                if (buffered_message.toLowerCase().contains("error")) {
+                if (buffered_message.toLowerCase().contains("error") && !buffered_message.contains("showErrorMessages")) {
                     System.err.println(buffered_message);
                 } else {
                     System.out.println(buffered_message);

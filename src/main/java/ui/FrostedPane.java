@@ -45,7 +45,7 @@ public class FrostedPane extends JPanel {
 
             BufferedImage active_image_buffer = canvas_active_image.getSubimage(getX(), getY(), getWidth(), getHeight());
 
-            active_image_buffer = new BlurUtils().getFilteredImage(active_image_buffer, 1);
+            active_image_buffer = new BlurUtils().getFilteredImage(active_image_buffer);
 
             blurred_image = active_image_buffer;
 

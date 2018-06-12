@@ -1,3 +1,28 @@
+/**
+ * Copyright 2018 (C) Jiawen Deng. All rights reserved.
+ * <p>
+ * This document is the property of Jiawen Deng.
+ * It is considered confidential and proprietary.
+ * <p>
+ * This document may not be reproduced or transmitted in any form,
+ * in whole or in part, without the express written permission of
+ * Jiawen Deng.
+ * <p>
+ * -----------------------------------------------------------------------------
+ * ParseUtils.java
+ * -----------------------------------------------------------------------------
+ * This is a specialized java class designed to parse strings from XML files.
+ * <p>
+ * This class is a part of the CoreFramework, and is essential for the
+ * normal functions of this software.
+ * <p>
+ * This class should not be changed under any circumstances.
+ * -----------------------------------------------------------------------------
+ * This is a legacy class ported from the TeslaUI project. Compatibility is
+ * not guaranteed.
+ * -----------------------------------------------------------------------------
+ */
+
 package main.java.constants;
 
 import org.w3c.dom.Document; // Smile~

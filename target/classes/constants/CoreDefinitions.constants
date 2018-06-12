@@ -11,6 +11,11 @@
         <updateIntervals>1000</updateIntervals>
     </LogUtils>
 
+    <BlurUtils>
+        <iterationNumber>2</iterationNumber>
+        <filterType>16</filterType>
+    </BlurUtils>
+
     <RefreshRate>35</RefreshRate>
 
     <TextureCount>
@@ -23,4 +28,5 @@
 
     <MaxZoom>3</MaxZoom>
     <MinZoom>1</MinZoom>
+
 </CoreConstants>
